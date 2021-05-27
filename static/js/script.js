@@ -39,5 +39,8 @@ function rollclbk(e) {
 
 function outclbk(e) {
   console.log(scores);
-  //setTimeout(() => (window.location = "/logout"), 6000);
+
+  // ajax post scores as json
+
+  window.location = "/logout";
 }

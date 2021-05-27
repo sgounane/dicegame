@@ -16,7 +16,7 @@
 }
 
 #listscors {
-  border: 1px solid gray;
+  border: 1px solid blue;
   overflow: scroll;
   height: 300px;
 }

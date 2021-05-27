@@ -13,7 +13,8 @@ def index():
 @app.route("/game")
 def game():
     if session.get("username"):
-        scores=[10,16,25,28]
+        scores=[10,16,25,28] # from database
+
         return render_template("game.html", username=session.get("username"), scores=scores)
     return render_template("login.html")
 @app.route("/login", methods=["POST","GET"])
@@ -34,5 +35,10 @@ def login():
 def logout():
     session.pop("username")
     session.pop("email")
+    return redirect("/")
+
+@app.route("/save", methods=["POST"])
+def logout():
+    #recuperer le json et le stocker dans la base de donnees
     return redirect("/")
 app.run(debug=True, host="0.0.0.0", port=4444)
