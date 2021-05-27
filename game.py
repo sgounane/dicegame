@@ -1,6 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app=Flask(__name__)
+
+global logedin
+logedin=False
 
 @app.route("/")
 def index():
@@ -9,16 +12,24 @@ def index():
 
 @app.route("/game")
 def game():
-    return render_template("game.html")
-
+    global logedin
+    if logedin==True:
+        return render_template("game.html")
+    return render_template("login.html")
 @app.route("/login", methods=["POST","GET"])
 def login():
-    if request.method=="POST":
-        return  render_template("game.html")
+    global logedin
+    if request.method=="POST" or logedin==True:
+        logedin=True
+        return  redirect("/game")
+
+
     return render_template("login.html")
 
 
 @app.route("/logout")
 def logout():
+    global logedin
+    logedin=False
     return render_template("logout.html")
 app.run(debug=True, port=4444)
