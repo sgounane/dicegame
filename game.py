@@ -32,4 +32,4 @@ def logout():
     global logedin
     logedin=False
     return render_template("logout.html")
-app.run(debug=True, port=4444)
+app.run(debug=True, host="0.0.0.0", port=4444)
