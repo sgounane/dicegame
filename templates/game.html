@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <div class="centerdiv">
+  <h3>Player: {{ username }}</h3>
   <img src="{{url_for('static',filename='imgs/dice-3.png')}}" alt="" /><br />
+  <h3 id="score">Score: 0</h3>
   <button id="newgame">New Game</button>
   <button id="roll">Roll ite</button>
   <button id="out">Out</button>
