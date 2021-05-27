@@ -1,10 +1,26 @@
 {% extends "base.html" %} {% block content %}
 <div class="centerdiv">
   <h3>Player: {{ username }}</h3>
-  <img src="{{url_for('static',filename='imgs/dice-3.png')}}" alt="" /><br />
+  <div class="medel">
+    <div class="imgdiv">
+      <img
+        id="dice"
+        src="{{url_for('static',filename='imgs/dice-3.png')}}"
+        alt=""
+      />
+    </div>
+    <div id="listscors">
+      {% for score in scores%}
+      <p>{{score}}</p>
+      {% endfor %}
+    </div>
+  </div>
+
   <h3 id="score">Score: 0</h3>
   <button id="newgame">New Game</button>
   <button id="roll">Roll ite</button>
   <button id="out">Out</button>
 </div>
+
+<script src="{{ url_for('static', filename='js/script.js')}}"></script>
 {% endblock content %}

@@ -13,7 +13,8 @@ def index():
 @app.route("/game")
 def game():
     if session.get("username"):
-        return render_template("game.html", username=session.get("username"))
+        scores=[10,16,25,28]
+        return render_template("game.html", username=session.get("username"), scores=scores)
     return render_template("login.html")
 @app.route("/login", methods=["POST","GET"])
 def login():

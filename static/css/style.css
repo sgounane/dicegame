@@ -1,6 +1,6 @@
 * {
-  margin: 10px;
-  padding: 6px;
+  padding: 4px;
+  margin: 6px;
 }
 .container {
   text-align: center;
@@ -8,5 +8,24 @@
 .centerdiv {
   display: inline-block;
   text-align: center;
+}
+.medel {
+  display: flex;
+  text-align: center;
   border: 1px solid blue;
+}
+
+#listscors {
+  border: 1px solid gray;
+  overflow: scroll;
+  height: 300px;
+}
+
+.imgdiv {
+  height: 300px;
+  border: 1px solid blue;
+}
+
+img {
+  object-fit: cover;
 }
